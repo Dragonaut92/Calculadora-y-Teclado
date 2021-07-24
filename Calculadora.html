@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+<script>
+    
+var termino1=0, termino2=0, signo="";
+    
+function escribir (number) {
+        document.getElementById("display").value
+
+        document.getElementById("display").value = document.getElementById("display").value + number
+    
+    }
+    
+function operador(ope) {
+    termino1 = document.getElementById("display").value
+    termino1 = parseInt(termino1);
+    signo = ope;
+    document.getElementById("display").value = "";
+
+
+        
+    }
+function igual() {
+        termino2 = document.getElementById("display").value;
+        termino2 = parseInt (termino2);
+        
+        switch(signo){
+        case 'MAS':
+            res = termino1 + termino2;    
+            break
+             
+        case 'MEN':
+            res = termino1 - termino2; 
+            break
+            
+        case 'POR':
+            res = termino1 * termino2;
+                break
+            
+        case 'DIV':
+            res = termino1 / termino2;
+            break
+
+        default:
+
+        }
+        document.getElementById("display").value = res
+    }
+    function borrar(){
+        var termino1=0, termino2=0, signo="";
+        document.getElementById("display").value="" ;
+
+    }
+    
+
+</script>
+  <input id=display type="text" value="" placeholder="Resultado">
+  <br/>
+  <input type="button" value="1" onclick="escribir(1)" />
+  <input type="button" value="2" onclick="escribir(2)" />
+  <input type="button" value="3" onclick="escribir(3)" />
+  <br/>
+  <input type="button" value="4" onclick="escribir(4)" />
+  <input type="button" value="5" onclick="escribir(5)" />
+  <input type="button" value="6" onclick="escribir(6)" />
+  <br/>
+  <input type="button" value="7" onclick="escribir(7)" />
+  <input type="button" value="8" onclick="escribir(8)" />
+  <input type="button" value="9" onclick="escribir(9)" />
+  <br/>
+  <input type="button" value="0" onclick="escribir(0)" />
+  <input type="button" value="+" onclick="operador('MAS')"/>
+  <input type="button" value="-" onclick="operador('MEN')"/>
+  <br/>
+  <input type="button" value="*" onclick="operador('POR')"/>
+  <input type="button" value="/" onclick="operador('DIV')"/>
+  <input type="button" value="=" onclick="igual()">
+  <input type="button" value="C" onclick="borrar()">
+</body>
+</html>

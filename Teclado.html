@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teclado</title>
+
+</head>
+<body>
+
+
+
+<input id="display" type="text" value="" placeholder="Ingrese texto">
+<br/>    
+
+
+<script>
+    function escribir(letra){
+        document.getElementById("display").value += letra;
+    
+    }
+    l1 = ["q", "w", "e", "r","t", "y", "u", "i","o", "p"];
+    
+    l2 = ["a","s","d","f","g","h","j","k","l","ñ",];
+   
+    l3 = ["z","x","c","v","b","n","m",];
+    
+    
+    
+    for (i=0; i<l1.length; i++) {   
+    console.log ( l1[i] );
+    document.write ('<input type="button" value="'+l1[i]+'" onclick="escribir(this.value)">');
+        
+    }
+    
+    for (i=0 ; i<l2.length; i++){
+        console.log (l2[i]);
+        document.write ('<input type="button" value="'+l2[i]+'" onclick="escribir(this.value)">');
+
+    }
+    
+    for (i=0 ; i<l3.length; i++){
+        console.log (l3[i]);
+        document.write ('<input type="button" value="'+l3[i]+'" onclick="escribir(this.value)">');
+         }
+
+    function borrar () {
+
+        document.getElementById ("display"). value = "";
+
+
+
+
+  }
+    
+  
+    
+</script>
+
+<input type="button" value="borrar" onclick="borrar()">
+
+    
+</body>
+</html>
